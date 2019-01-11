@@ -236,6 +236,10 @@ class CentrifugeClientImpl: NSObject, CentrifugeClient, WebSocketDelegate {
     
     func websocketDidDisconnect(socket: WebSocketClient, error: Error?) {
         guard let handler = blockingHandler else { return }
+        let error = error ?? NSError(domain: CentrifugeErrorDomain,
+                                     code: CentrifugeErrorCode.CentrifugeMessageWithError.rawValue,
+                                     userInfo: [NSLocalizedDescriptionKey : "Unknown websoket disconnect error"])
+
         handler(nil, error)
     }
     
