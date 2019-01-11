@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.source_files = 'CentrifugeiOS/Classes/**/*.{h,m,swift}'
   s.module_map = 'CentrifugeiOS/Classes/CentrifugeiOS.modulemap'
   s.private_header_files = 'CentrifugeiOS/Classes/CommonCryptoBridge/CommonCryptoBridge.h'
+  s.public_header_files = 'CentrifugeiOS/Classes/CentrifugeiOS.h'
 
   s.dependency 'Starscream', '~>3.0.4'
 end
